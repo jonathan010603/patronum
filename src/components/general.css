@@ -1,7 +1,6 @@
 @keyframes bright {
   100% {
     filter: brightness(140%);
-
   }
 }
 
