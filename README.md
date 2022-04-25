@@ -4,7 +4,7 @@ Patronum is an website with some Harry Potter information. I'm developing it to 
 
 
 
-
+-------------------------------------------------------
 
 LOGS 
 
