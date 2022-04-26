@@ -24,15 +24,17 @@ const MobileHouses = () => {
   };
 
   return (
-    <PageContainer bgColor="white" flexDirection="row">
+    <>
       <CarouselArrows next={NextHouse} prev={PrevHouse} />
-      <HouseContainer
-        width="100%"
-        houseName={HousesArray[currentHouse].name}
-        bgColor={HousesArray[currentHouse].bg}
-        houseLogo={HousesArray[currentHouse].logo}
-      />
-    </PageContainer>
+      <PageContainer bgColor="white" flexDirection="row">
+        <HouseContainer
+          width="100%"
+          houseName={HousesArray[currentHouse].name}
+          bgColor={HousesArray[currentHouse].bg}
+          houseLogo={HousesArray[currentHouse].logo}
+        />
+      </PageContainer>
+    </>
   );
 };
 

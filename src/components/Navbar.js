@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import "./general.css";
 import Logo from "./Logo";
+import { NavLinks } from "./navbar/NavbarComps";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 const Navbar = (props) => {
@@ -30,17 +31,6 @@ const Navbar = (props) => {
     window.addEventListener("resize", handleResize);
   });
 
-  const StyledNavbar = styled.nav`
-    width: 100%;
-    min-height: 10vh;
-    background-color: ${props.bgColor};
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    z-index: 998;
-  `;
-
   const NavUl = styled.ul`
     z-index: ${mobile ? 999 : 996};
     list-style-type: none;
@@ -52,37 +42,8 @@ const Navbar = (props) => {
     padding: 0;
     margin-top: ${mobile && open ? "10vh" : mobile ? "-1000px" : 0};
     position: ${mobile ? "absolute" : "static"};
-    background-color: ${mobile ? props.bgColor : "none"};
+    background-color: ${mobile && props.bgColor};
     width: 100%;
-  `;
-
-  const NavLinks = styled.li`
-    @media (max-width: 480px) {
-      font-size: 2rem;
-    }
-
-    @media (min-width: 481px) {
-      font-size: 2.5rem;
-    }
-
-    @media (min-width: 600px) {
-      font-size: 3rem;
-    }
-
-    @media (min-width: 700px) {
-      font-size: 2rem;
-      margin: 0 2%;
-    }
-
-    @media (min-width: 800px) {
-      font-size: 1.5rem;
-      margin: 0 2%;
-    }
-
-    @media (min-width: 1000px) {
-      font-size: 2rem;
-      margin: 0 2%;
-    }
   `;
 
   let menuIcon = {
@@ -94,9 +55,20 @@ const Navbar = (props) => {
     right: 0
   };
 
+  let NavStyle = {
+    width: "100%",
+    minHeight: "10vh",
+    backgroundColor: props.bgColor,
+    margin: 0,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    zIndex: 998
+  };
+
   return (
-    <StyledNavbar>
-      <Logo image="/logo.svg" />
+    <nav style={NavStyle}>
+      <Logo image="/logo-cropped.svg" />
       {mobile ? (
         <img
           src={open ? "/close.png" : "/menu.png"}
@@ -113,7 +85,7 @@ const Navbar = (props) => {
           </NavLinks>
         ))}
       </NavUl>
-    </StyledNavbar>
+    </nav>
   );
 };
 

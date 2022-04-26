@@ -6,7 +6,7 @@ import MobileHouses from "./houses/components/MobileHouses";
 import HousesArray from "../utils/HousesArray";
 
 const Houses = () => {
-  const [mobile, setMobile] = useState(true);
+  const [mobile, setMobile] = useState(false);
 
   const handleResize = () => {
     if (window.innerWidth <= 800) {
@@ -17,6 +17,7 @@ const Houses = () => {
   };
 
   useEffect(() => {
+    handleResize();
     window.addEventListener("resize", handleResize);
   });
 

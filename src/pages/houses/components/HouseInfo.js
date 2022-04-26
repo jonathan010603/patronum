@@ -70,11 +70,13 @@ const HouseInfo = (props) => {
   ];
 
   return (
-    <PageContainer bgColor={props.houseInfoPack.bg} flexDirection="column">
+    <>
       <CarouselArrows next={NextInfo} prev={PrevInfo} />
-      <HouseName>{props.houseInfoPack.name}</HouseName>
-      {Info[currentInfo]}
-    </PageContainer>
+      <PageContainer bgColor={props.houseInfoPack.bg} flexDirection="column">
+        <HouseName>{props.houseInfoPack.name}</HouseName>
+        {Info[currentInfo]}
+      </PageContainer>
+    </>
   );
 };
 

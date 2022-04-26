@@ -3,6 +3,7 @@ import Houses from "./pages/Houses";
 import Navbar from "./components/Navbar";
 import HouseInfo from "./pages/houses/components/HouseInfo";
 import InfoPacks from "./utils/InfoPacks";
+import Home from "./pages/Home";
 import {
   BrowserRouter as Router,
   Routes,
@@ -16,6 +17,7 @@ function App() {
       <BrowserRouter>
         <Navbar bgColor="black" textColor="white" />
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/houses" element={<Houses />} />
           <Route
             path="/houses/Gryffindor"
