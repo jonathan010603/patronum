@@ -16,3 +16,9 @@ LOGS
 25/04/22 - 11:21 AM
 
 - I turned the carousel arrows into a new Component called 'CarouselArrows'. This reduced the size of MobileHouses and HouseInfo pages.
+
+26/04/22 - 02:34 AM
+
+- Started the Home page development.
+- Corrected some bugs and switched the logo file.
+- Created a new component for storing navbar components.
